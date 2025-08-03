@@ -22,7 +22,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar__container">
+      <div class="navbar__container container">
         <div class="navbar__logo">
           <img src="images/logo.svg" alt="Leno" />
         </div>
@@ -95,7 +95,7 @@
 
         <!-- Mobile Menu -->
           <div id="side-menu" >
-       <div class="flex">
+       <div class="side__flex">
               <!-- Botão menu mobile -->
             <ul class="navbar__menu-list " >
             <li class="navbar__menu-item">
@@ -159,6 +159,42 @@
             </div>
       </div>
     </nav>
+
+<!-- Hero -->
+ <header class="hero">
+  <div class="hero__container container">
+    <div class="hero content">
+<h1 class="hero__title">
+Seu
+  <span class="hero__title--primary">produtividade</span>
+  assistente
+</h1>
+<p class="hero__description">
+  Aumente sua produtividade e melhore sua saúde com o Leno, o aplicativo completo para desenvolvedores e criadores.
+</p>
+<div class="hero__buttons">
+  <a href="download" class="hero__button btn">
+    <i class="fa-brands fa-apple"></i>
+    Para a Aple</a>
+     <a href="download" class="hero__button btn">
+    <i class="fa-brands fa-android"></i>
+    Para a Android</a>
+</div>
+    </div>
+    <div class="hero__imagem">
+      <img src="images/header-smartphones.png" alt="Leno app">
+    </div>
+  </div>
+ </header>
+
+
+<main>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptates quia voluptatibus sunt fugiat. Eius expedita sequi provident? Explicabo rerum error, amet voluptates fuga, tempore, quisquam provident dolores sequi ut aut porro quasi! Possimus, eum. Laudantium omnis doloremque ullam praesentium cum ut minus? Quasi, quae! At accusantium voluptate ipsam, hic autem cumque tempora? Nobis, mollitia eligendi?
+</main>
+
+
+
+
 <script type="module">
   import { setupMenuToggle, setupMenuStateOnLoad, setupMenuResizeHandler } from "./js/menu/menuEvents.js"
   import { setupEventListeners, handleDOMContentLoaded } from "./js/themeEvents.js"
@@ -175,6 +211,6 @@
   })
 </script>
 
-
+<script src="js/script.js"></script>
   </body>
 </html>
