@@ -201,7 +201,7 @@ background-color: transparent;
   transform: translateX(0);
 }
 
-@media (max-width: 360px) {
+@media (max-width: 460px) {
 
 
 [data-theme="light"]
