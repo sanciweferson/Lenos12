@@ -1,24 +1,23 @@
 // js/themeSystem.js
 
-import { userPrefersDark, updateTheme, getSystemPrefersDark } from "./theme.js"
+import { htmlElement } from "./themeEvents.js"
 
-export const setupSystemThemeObserver = () => {
+export function setupSystemThemeObserver() {
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
 
-  const onSystemThemeChange = (e) => {
-    if (userPrefersDark === null) updateTheme(e.matches)
+  if (mediaQuery.addEventListener) {
+    mediaQuery.addEventListener("change", (e) => {
+      const savedTheme = localStorage.getItem("theme")
+      if (!savedTheme) {
+        htmlElement.setAttribute("data-theme", e.matches ? "dark" : "light")
+      }
+    })
+  } else {
+    mediaQuery.addListener((e) => {
+      const savedTheme = localStorage.getItem("theme")
+      if (!savedTheme) {
+        htmlElement.setAttribute("data-theme", e.matches ? "dark" : "light")
+      }
+    })
   }
-
-  if (mediaQuery.addEventListener)
-    mediaQuery.addEventListener("change", onSystemThemeChange)
-  else if (mediaQuery.addListener) mediaQuery.addListener(onSystemThemeChange)
-
-  let lastPref = getSystemPrefersDark()
-  setInterval(() => {
-    const currentPref = getSystemPrefersDark()
-    if (userPrefersDark === null && currentPref !== lastPref) {
-      updateTheme(currentPref)
-      lastPref = currentPref
-    }
-  }, 2000)
 }
