@@ -1,11 +1,10 @@
-// js/themeEvents.js
-
 export const htmlElement = document.documentElement
 
-function updateThemeIcons() {
+export function updateThemeIcons() {
   const moonIcons = document.querySelectorAll(".icon-moon")
   const sunIcons = document.querySelectorAll(".icon-sun")
   const currentTheme = htmlElement.getAttribute("data-theme")
+
   if (currentTheme === "dark") {
     moonIcons.forEach((i) => i.classList.add("hidden"))
     sunIcons.forEach((i) => i.classList.remove("hidden"))
@@ -25,6 +24,7 @@ function toggleTheme() {
 
 export function handleDOMContentLoaded() {
   const savedTheme = localStorage.getItem("theme")
+
   if (savedTheme === "dark") {
     htmlElement.setAttribute("data-theme", "dark")
   } else if (savedTheme === "light") {
@@ -35,6 +35,7 @@ export function handleDOMContentLoaded() {
     ).matches
     htmlElement.setAttribute("data-theme", prefersDark ? "dark" : "light")
   }
+
   updateThemeIcons()
 }
 
